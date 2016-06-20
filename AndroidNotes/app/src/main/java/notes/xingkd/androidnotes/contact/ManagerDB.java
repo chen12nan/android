@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -15,32 +14,9 @@ import java.util.ArrayList;
 public class ManagerDB {
 
     private int type = 1; // 0 :execSQL  1:query
-    private final static String TABLENAME = "Contact";
+    public final static String TABLENAME = "Contact";
     private  DBHelper mDBHelper;
     private ArrayList<Contact> mContacts = new ArrayList<Contact>();
-
-    private class DBHelper extends SQLiteOpenHelper{
-
-        public DBHelper(Context context)
-        {
-            super(context, "Contacts.db", null, 1);
-            Log.v(ContactFragment.TAG, "DEHelper::DBHelper()");
-        }
-
-        @Override
-        public void onCreate(SQLiteDatabase db) {
-            db.execSQL("create table " + TABLENAME + "(id integer primary key autoincrement, " +
-                    "name varchar(20)," +
-                    "age integer," +
-                    "phone varchar(40))");
-            Log.v(ContactFragment.TAG, "onCreate()");
-        }
-
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            Log.v(ContactFragment.TAG, "DBHelper::onUpgrade()");
-        }
-    }
 
     public ManagerDB(Context context)
     {
