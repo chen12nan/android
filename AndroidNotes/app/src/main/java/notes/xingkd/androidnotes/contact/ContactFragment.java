@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +36,6 @@ public class ContactFragment  extends Fragment{
     public void onAttach(Context context) {
         super.onAttach(context);
         Log.v(TAG, "onAttach");
-        mManagerDB = new ManagerDB(this.getContext());
     }
 
     @Override
@@ -45,6 +45,7 @@ public class ContactFragment  extends Fragment{
         mListView = (ListView)view.findViewById(R.id.listView);
         initAdapter(AdapterType.adArray);
 
+        mManagerDB = new ManagerDB(this.getContext());
         return view;
     }
 
@@ -60,8 +61,19 @@ public class ContactFragment  extends Fragment{
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     //Notes.intent();
-                    Intent intent = new Intent(Intent.ACTION_DIAL);
-                    ContactFragment.this.getContext().startActivity(intent);
+//                    Intent intent = new Intent(Intent.ACTION_DIAL);
+//                    ContactFragment.this.getContext().startActivity(intent);
+//                    Contact contact = new Contact("xingkd", (short)position, "15120077642");
+//                    mManagerDB.insert(contact);
+                    Contact contact = mManagerDB.query((short)12);
+                    System.out.println(contact.getName() +" " +
+                            contact.getId() + " "  +
+                            contact.getAge() + " "  +
+                            contact.getPhone());
+
+                    contact.setName("abc");
+                    contact.setPhone("110");
+                    mManagerDB.update(contact);
                 }
             });
         }

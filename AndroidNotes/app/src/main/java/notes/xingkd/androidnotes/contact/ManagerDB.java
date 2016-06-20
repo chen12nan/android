@@ -2,6 +2,7 @@ package notes.xingkd.androidnotes.contact;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  */
 public class ManagerDB {
 
-    private int type = 0; // 0 :execSQL  1:query
+    private int type = 1; // 0 :execSQL  1:query
     private final static String TABLENAME = "Contact";
 
     private class DBHelper extends SQLiteOpenHelper{
@@ -30,6 +31,7 @@ public class ManagerDB {
                     "name varchar(20)," +
                     "age integer," +
                     "phone varchar(40))");
+            Log.v(ContactFragment.TAG, "onCreate()");
         }
 
         @Override
@@ -61,7 +63,11 @@ public class ManagerDB {
             values.put("age", contact.getAge());
             values.put("phone", contact.getPhone());
 
-            db.insert("Contact", null, values);
+            long id = db.insert("Contact", null, values);
+            if(id != -1)
+            {
+                contact.setId((short)id);
+            }
         }
         return true;
     }
@@ -95,15 +101,39 @@ public class ManagerDB {
             values.put("name", contact.getName());
             values.put("age", contact.getAge());
             values.put("phone", contact.getPhone());
-            values.put("id", contact.getId());
-
-            db.update(TABLENAME, values, "where id = ?", new String[contact.getId()]);
+            // new String[10] 创建数组，有10个元素
+            // new String[]{10} 有 1 个元素
+            db.update(TABLENAME, values, " id = ? ", new String[]{Short.toString(contact.getId())});
         }
         return true;
     }
 
     public Contact query(short id)
     {
+        SQLiteDatabase db = mDBHelper.getReadableDatabase();
+        if(type == 0)
+        {
+
+        }
+        else if(type == 1)
+        {
+            String[] columns = {"id", "name", "age", "phone"};
+            String where= " id = ?";
+            String[] args = {Short.toString(id)};
+            Cursor cursor = db.query(TABLENAME, columns, where, args, null, null, null);
+            Log.v(ContactFragment.TAG, Integer.toString(cursor.getCount()));
+            Contact contact = new Contact();
+            cursor.moveToFirst();
+            for(int i = 0; i<cursor.getCount(); i++)
+            {
+                Log.v(ContactFragment.TAG, cursor.getString(cursor.getColumnIndex("name")));
+                contact.setId(cursor.getShort(cursor.getColumnIndex("id")));
+                contact.setName(cursor.getString(cursor.getColumnIndex("name")));
+                contact.setAge(cursor.getShort(cursor.getColumnIndex("age")));
+                contact.setPhone(cursor.getString(cursor.getColumnIndex("phone")));
+                return contact;
+            }
+        }
         return null;
     }
 
