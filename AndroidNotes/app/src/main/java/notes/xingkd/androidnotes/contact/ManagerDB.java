@@ -16,6 +16,8 @@ public class ManagerDB {
 
     private int type = 1; // 0 :execSQL  1:query
     private final static String TABLENAME = "Contact";
+    private  DBHelper mDBHelper;
+    private ArrayList<Contact> mContacts = new ArrayList<Contact>();
 
     private class DBHelper extends SQLiteOpenHelper{
 
@@ -40,12 +42,10 @@ public class ManagerDB {
         }
     }
 
-    private  DBHelper mDBHelper;
-    private ArrayList<Contact> mContacts;
-
     public ManagerDB(Context context)
     {
         mDBHelper = new DBHelper(context);
+        Log.v(ContactFragment.TAG, Integer.toString(getContacts().size()));
     }
 
     public boolean insert(Contact contact)
@@ -139,6 +139,30 @@ public class ManagerDB {
 
     public ArrayList<Contact> getContacts()
     {
+        mContacts.clear();
+        SQLiteDatabase db = mDBHelper.getReadableDatabase();
+        if(type == 0)
+        {
+
+        }
+        else if(type == 1)
+        {
+            String[] columns = {"id", "name", "age", "phone"};
+//            Cursor cursor = db.query(TABLENAME, columns, null, null, null, null, null);
+            Cursor cursor = db.rawQuery("select * from Contact", null);
+            Log.v(ContactFragment.TAG, Integer.toString(cursor.getCount()));
+            cursor.moveToFirst();
+            for(int i = 0; i<cursor.getCount(); i++)
+            {
+                Contact contact = new Contact();
+                Log.v(ContactFragment.TAG, cursor.getString(cursor.getColumnIndex("name")));
+                contact.setId(cursor.getShort(cursor.getColumnIndex("id")));
+                contact.setName(cursor.getString(cursor.getColumnIndex("name")));
+                contact.setAge(cursor.getShort(cursor.getColumnIndex("age")));
+                cursor.moveToNext();
+                mContacts.add(contact);
+            }
+        }
         return mContacts;
     }
 }

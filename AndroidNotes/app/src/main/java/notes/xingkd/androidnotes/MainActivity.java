@@ -1,10 +1,13 @@
 package notes.xingkd.androidnotes;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.util.Log;
+
+import notes.xingkd.androidnotes.contact.ContactFragment;
+import notes.xingkd.androidnotes.thread.TestThread;
 
 /**
  * 需要学习：
@@ -13,12 +16,11 @@ import android.util.Log;
  * 3、SQL: SQLiteDatabase
  * 4、ListView and Adapter
  */
-import notes.xingkd.androidnotes.contact.ContactFragment;
 
 public class MainActivity extends Activity {
 
     private  Fragment content;
-
+    private  TestThread sThread;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,14 @@ public class MainActivity extends Activity {
         ft.addToBackStack("CONTACT");
         Log.v(ContactFragment.TAG, "MainActivity::onCreate()");
         ft.commit();
+        System.out.println(Thread.currentThread().getId() +" main ");
+
+        sThread = new TestThread();
+        sThread.start();
+
+        sThread.testRunnable();
+
+        Log.v(ContactFragment.TAG, "=================");
     }
 
     @Override

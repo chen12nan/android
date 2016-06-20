@@ -16,4 +16,18 @@ public class Notes {
          6、Intent(String action, Uri uri, Context packageContext, Class<?> cls) 前两种结合体
          */
     }
+
+    public static  void multiThread()
+    {
+        /**
+         http://www.cr173.com/html/19165_1.html
+
+         据我所知android提供了以下几种方法，用于实现后台线程与UI线程的交互。
+         1、handler
+         2、Activity.runOnUIThread(Runnable)
+         3、View.Post(Runnable)
+         4、View.PostDelayed(Runnabe,long)
+         5、AsyncTask
+         */
+    }
 }
