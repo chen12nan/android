@@ -1,8 +1,13 @@
 package notes.xingkd.androidnotes.contact;
 
 import android.app.Fragment;
+import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.UriMatcher;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -12,17 +17,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import java.util.Random;
+
+import notes.xingkd.androidnotes.Notes;
 import notes.xingkd.androidnotes.R;
 
 /**
  * Created by lee on 16-6-19.
  */
-enum AdapterType{
-    adArray,
-    adSimple,
-    adSimpleCursor,
-    adBase
-}
 public class ContactFragment  extends Fragment{
 
     public final static  String TAG = "testContact";
@@ -31,6 +34,13 @@ public class ContactFragment  extends Fragment{
     private AdapterType mAdType = AdapterType.adArray;
     private String[] items = {"Chinese", "English", "French", "Japanese", "American"};
     private ManagerDB mManagerDB = null;
+
+    enum AdapterType{
+        adArray,
+        adSimple,
+        adSimpleCursor,
+        adBase
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -60,20 +70,8 @@ public class ContactFragment  extends Fragment{
             mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    //Notes.intent();
-//                    Intent intent = new Intent(Intent.ACTION_DIAL);
-//                    ContactFragment.this.getContext().startActivity(intent);
-//                    Contact contact = new Contact("xingkd", (short)position, "15120077642");
-//                    mManagerDB.insert(contact);
-                    Contact contact = mManagerDB.query((short)12);
-                    System.out.println(contact.getName() +" " +
-                            contact.getId() + " "  +
-                            contact.getAge() + " "  +
-                            contact.getPhone());
-
-                    contact.setName("abc");
-                    contact.setPhone("110");
-                    mManagerDB.update(contact);
+                    System.out.println(" position = " + position + "  id = " + id);
+                    testProvider(position);
                 }
             });
         }
@@ -87,6 +85,70 @@ public class ContactFragment  extends Fragment{
         }
         else if(AdapterType.adBase == type)
         {
+
+        }
+    }
+
+    public void testIntent()
+    {
+        Notes.intent();
+        Intent intent = new Intent(Intent.ACTION_DIAL);
+        this.getContext().startActivity(intent);
+    }
+
+    public void testDatabase()
+    {
+//        Contact contact = new Contact("xingkd", (short)position, "15120077642");
+//        mManagerDB.insert(contact);
+        Contact contact = mManagerDB.query((short)12);
+        System.out.println(contact.getName() +" " +
+                contact.getId() + " "  +
+                contact.getAge() + " "  +
+                contact.getPhone());
+
+        contact.setName("abc");
+        contact.setPhone("110");
+        mManagerDB.update(contact);
+    }
+
+    public void testProvider(int position)
+    {
+        // 0:insert. 1:delete. 2:update. 3:query
+        int type = position%4;
+        Uri contactUris = Uri.parse("content://notes.xingkd/contact");
+        Uri contactUri = Uri.parse("content://notes.xingkd/contact/27");
+
+        if(type == 0)
+        {
+            ContentValues values = new ContentValues();
+            values.put("name", "cprovier");
+            values.put("age", type);
+            values.put("phone", "hello");
+            getContext().getContentResolver().insert(contactUris, values);
+        }
+        else if(type == 1)
+        {
+            getContext().getContentResolver().delete(contactUri, null, null);
+
+        }
+        else if(type == 2)
+        {
+            ContentValues values = new ContentValues();
+            double d = Math.random();
+            System.out.println("d = " + d);
+            values.put("age", d);
+            values.put("name", Double.toString(d));
+            values.put("phone", "110");
+
+            getContext().getContentResolver().update(contactUri, values, null, null);
+        }
+        else
+        {
+            String[] column = {"id", "name", "age", "phone"};
+            String where = "age = 2";
+            Cursor cursor = getContext().getContentResolver().query(contactUri, column, where, null, null);
+            System.out.println("query--count =" + cursor.getCount());
+
 
         }
     }
