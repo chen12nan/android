@@ -5,8 +5,11 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 
 import notes.xingkd.androidnotes.contact.ContactFragment;
+import notes.xingkd.androidnotes.datastruct.TestList;
+import notes.xingkd.androidnotes.fragment.FragmentFactory;
 import notes.xingkd.androidnotes.thread.TestThread;
 
 /**
@@ -25,7 +28,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        content = new ContactFragment();
+        content = FragmentFactory.createFragment(FragmentFactory.FragmentType.ftLoad);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.add(R.id.main_content, content, "CONTACT");
         ft.addToBackStack("CONTACT");
@@ -38,6 +41,7 @@ public class MainActivity extends Activity {
 
         sThread.testRunnable();
 
+        TestList.testList();
         Log.v(ContactFragment.TAG, "=================");
     }
 
@@ -88,5 +92,11 @@ public class MainActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         Log.v(ContactFragment.TAG, "MainActivity::onDestroy()");
+    }
+
+    // 创建搜索框， menu项
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
     }
 }

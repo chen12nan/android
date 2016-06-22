@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +18,21 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Random;
 
 import notes.xingkd.androidnotes.Notes;
 import notes.xingkd.androidnotes.R;
+import notes.xingkd.androidnotes.adapter.TestBaseAdapter;
 
 /**
  * Created by lee on 16-6-19.
@@ -52,8 +63,8 @@ public class ContactFragment  extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.v(TAG, "ContactFragment::onCreateView");
         View view = inflater.inflate(R.layout.contactfragment, container, false);
-        mListView = (ListView)view.findViewById(R.id.listView);
-        initAdapter(AdapterType.adArray);
+        mListView = (ListView)view.findViewById(R.id.contactListView);
+        initAdapter(AdapterType.adBase);
 
         mManagerDB = new ManagerDB(this.getContext());
         return view;
@@ -77,7 +88,23 @@ public class ContactFragment  extends Fragment{
         }
         else if(AdapterType.adSimple == type)
         {
+            List<Map<String, Object>> mapList = new ArrayList<Map<String, Object>>();
 
+            Map<String, Object> map1 = new HashMap<String, Object>();
+            map1.put("img", R.drawable.favorites);
+            map1.put("name", "favorites");
+
+            mapList.add(map1);
+
+            Map<String, Object> map2 = new HashMap<String, Object>();
+            map2.put("img", R.drawable.jmico2);
+            map2.put("name", "encrypted");
+
+            mapList.add(map2);
+
+
+            mListView.setAdapter(new SimpleAdapter(getContext(), mapList, R.layout.simple_adapter,
+                    new String[]{"img", "name"}, new int[]{R.id.img, R.id.txt}));
         }
         else if(AdapterType.adSimpleCursor == type)
         {
@@ -85,7 +112,8 @@ public class ContactFragment  extends Fragment{
         }
         else if(AdapterType.adBase == type)
         {
-
+            TestBaseAdapter adapter = new TestBaseAdapter(getContext());
+            mListView.setAdapter(adapter);
         }
     }
 
