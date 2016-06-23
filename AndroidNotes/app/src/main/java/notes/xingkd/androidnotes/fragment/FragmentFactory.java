@@ -10,8 +10,13 @@ import notes.xingkd.androidnotes.contact.ContactFragment;
 public class FragmentFactory  {
 
     public enum FragmentType{
+        ftDefault,
         ftContact,
-        ftLoad
+        ftLoad,
+        ftList,
+        ftDialog,
+        ftLoginDialog,
+        ftPreference
     }
 
     public static Fragment createFragment(FragmentType type)
@@ -23,6 +28,26 @@ public class FragmentFactory  {
         else if(type == FragmentType.ftLoad)
         {
             return new LoadFragment();
+        }
+        else if(type == FragmentType.ftList)
+        {
+            return new TestListFragment();
+        }
+        else if(type == FragmentType.ftDialog)
+        {
+            return new TestDialogFragment();
+        }
+        else if(type == FragmentType.ftDefault)
+        {
+            return new TestFragment();
+        }
+        else if(type == FragmentType.ftLoginDialog)
+        {
+            return new LoginDialogFragment();
+        }
+        else if(type == FragmentType.ftPreference)
+        {
+            return new TestPreferenceFragment();
         }
         else
         {

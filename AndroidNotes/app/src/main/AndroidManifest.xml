@@ -17,7 +17,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
+        <activity android:name=".component.HandlerActivity">
+            <intent-filter>
+                <action android:name="notes.xingkd.Handler"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".preference.TestPreferenceActivity">
+            <intent-filter>
+                <action android:name="notes.xingkd.testPreference"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <provider
             android:authorities="notes.xingkd"
             android:name=".contact.ContactProvider"/>

@@ -14,7 +14,7 @@ public class TestThread extends Thread {
         super.run();
         while (true)
         {
-            System.out.println(currentThread().getId() + "jhkhkh:");
+            System.out.println("TestThread thread and id = " + currentThread().getId());
             try{
                 sleep(10000);
             }
@@ -37,10 +37,6 @@ class TestRunnable implements Runnable{
 
     @Override
     public void run() {
-
-        System.out.println("TestRunable::run()");
-        System.out.println(Thread.currentThread().getId() + "  runnable ");
-        System.out.println("TestRunable::run()");
-
+        System.out.println("TestRunnable thread and id = " + Thread.currentThread().getId());
     }
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <PreferenceCategory
+        android:key="set_net"
+        android:title="网络设置" >
+        <CheckBoxPreference
+            android:key="set_3g"
+            android:summary="使用3G虽可提高数据载入速度，但可能会降低电池寿命"
+            android:title="启用3G" />
+        <CheckBoxPreference
+            android:key="set_2g"
+            android:summaryOff="打开蜂窝数据"
+            android:summaryOn="关闭蜂窝数据"
+            android:title="蜂窝数据" />
+        <Preference
+            android:key="set_2g_net"
+            android:title="蜂窝数据网络" />
+        <CheckBoxPreference
+            android:key="set_roving"
+            android:summary="在境外时请关闭数据漫游"
+            android:title="数据漫游" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="set_VPN_Category"
+        android:title="VPN设置" >
+        <Preference
+            android:key="set_VPN"
+            android:title="设置VPN" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="无线和网络设置">
+        <CheckBoxPreference android:key="apply_fly"
+            android:summary="禁用所有无线连接" android:title="飞行模式">
+        </CheckBoxPreference>
+        <CheckBoxPreference android:key="apply_internet"
+            android:summary="禁用通过USB共享Internet连接"
+            android:title="Internet共享">
+        </CheckBoxPreference>
+        <CheckBoxPreference android:key="apply_wifi"
+            android:summary="打开Wi-Fi" android:title="Wi-Fi">
+        </CheckBoxPreference>
+        <Preference android:summary="设置和管理无线接入点" android:title="Wi-Fi设置"
+            android:dependency="apply_wifi" android:key="wifi_setting">
+        </Preference>
+        <CheckBoxPreference android:key="apply_bluetooth"
+            android:summary="启用蓝牙" android:title="蓝牙">
+        </CheckBoxPreference>
+        <Preference android:summary="管理连接、设备设备名称和可检测性"
+            android:title="蓝牙设置" android:dependency="apply_bluetooth"
+            android:key="bluetooth_setting">
+        </Preference>
+        <EditTextPreference android:key="number_edit"
+            android:title="输入电话号码">
+        </EditTextPreference>
+        <ListPreference android:title="部门设置" android:entries="@string/department"
+            android:entryValues="@string/department_value"
+            android:dialogTitle="选择部门"
+            android:key="depart_value">
+        </ListPreference>
+        <RingtonePreference android:ringtoneType="all" android:title="玲聲"
+            android:showDefault="true" android:key="ring_key"
+            android:showSilent="true">
+        </RingtonePreference>
+    </PreferenceCategory>
+</PreferenceScreen>
