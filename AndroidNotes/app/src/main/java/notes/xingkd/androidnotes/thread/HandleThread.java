@@ -13,6 +13,5 @@ public class HandleThread extends Thread {
     public void run() {
         super.run();
         Looper.prepare();
-
     }
 }
