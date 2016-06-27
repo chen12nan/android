@@ -327,4 +327,33 @@ public class Notes {
          LOCAL_SRC_FILES := foo.c bar.c.arm
          */
     }
+
+    /**
+     * aidl 自定义类型
+     * http://www.cnblogs.com/Lefter/archive/2013/05/24/3097082.html
+     *
+     * 添加服务
+     * http://www.2cto.com/kf/201501/370478.html
+     */
+    public static void aidlDataDirection()
+    {
+        /**
+         * 对于非基本数据类型，也不是String和CharSequence类型的，需要有方向指示，
+         * 包括in、out和inout，in表示由客户端设置，out表示由服务端设置，inout是两者均可设置。
+         AIDL只支持接口方法，不能公开static变量。
+
+         AIDL 编程中， 如果服务的aidl包是 a.b.c 那么client的aidl包也必须是 a.b.c (通过AndroidManifest.xml 修改）
+         修改后组件的 android:name 属性值要跟着修改，因为当前的包是 a.b.c了，因此要改成从java下一级的包开始
+        */
+
+//         然后创建Person.aidl文件，注意这里的parcelable和原来实现的Parcelable 接口，开头的字母p一个小写一个大写：
+//         package com.demo;
+//         parcelable Person;
+        /**
+         对于实现AIDL接口，官方还提醒我们：
+         1. 调用者是不能保证在主线程执行的，所以从一调用的开始就需要考虑多线程处理，以及确保线程安全；
+         2. IPC调用是同步的。如果你知道一个IPC服务需要超过几毫秒的时间才能完成地话，你应该避免在Activity的主线程中调用。也就是IPC调用会挂起应用程序导致界面失去响应，这种情况应该考虑单独开启一个线程来处理。
+         3. 抛出的异常是不能返回给调用者（跨进程抛异常处理是不可取的）
+         */
+    }
 }
