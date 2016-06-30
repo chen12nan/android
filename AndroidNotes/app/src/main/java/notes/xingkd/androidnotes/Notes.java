@@ -5,6 +5,17 @@ package notes.xingkd.androidnotes;
  */
 public class Notes {
 
+    public static void needToDo()
+    {
+        /**
+         * handler
+         * message
+         * aidl
+         * aidl callback
+         */
+
+        aidlDataDirection();
+    }
     public static void intent()
     {
         /**
@@ -332,7 +343,7 @@ public class Notes {
      * aidl 自定义类型
      * http://www.cnblogs.com/Lefter/archive/2013/05/24/3097082.html
      *
-     * 添加服务
+     * 添加系统服务
      * http://www.2cto.com/kf/201501/370478.html
      */
     public static void aidlDataDirection()
@@ -354,6 +365,68 @@ public class Notes {
          1. 调用者是不能保证在主线程执行的，所以从一调用的开始就需要考虑多线程处理，以及确保线程安全；
          2. IPC调用是同步的。如果你知道一个IPC服务需要超过几毫秒的时间才能完成地话，你应该避免在Activity的主线程中调用。也就是IPC调用会挂起应用程序导致界面失去响应，这种情况应该考虑单独开启一个线程来处理。
          3. 抛出的异常是不能返回给调用者（跨进程抛异常处理是不可取的）
+         */
+
+
+        /**
+         * http://blog.csdn.net/songjinshi/article/details/22918405
+         * 跨进程回调
+         */
+    }
+
+    public static void synchronize()
+    {
+        /**
+         * http://blog.csdn.net/kyfg27_niujin/article/details/7942006
+         *
+         一、当两个并发线程访问同一个对象object中的这个synchronized(this)同步代码块时，一个时间内只能有一个线程得到执行。另一个线程必须等待当前线程执行完这个代码块以后才能执行该代码块。
+         二、然而，当一个线程访问object的一个synchronized(this)同步代码块时，另一个线程仍然可以访问该object中的非synchronized(this)同步代码块。
+         三、尤其关键的是，当一个线程访问object的一个synchronized(this)同步代码块时，其他线程对object中所有其它synchronized(this)同步代码块的访问将被阻塞。
+         四、第三个例子同样适用其它同步代码块。也就是说，当一个线程访问object的一个synchronized(this)同步代码块时，它就获得了这个object的对象锁。结果，
+         其它线程对该object对象所有同步代码部分的访问都被暂时阻塞。
+
+         五、以上规则对其它对象锁同样适用.
+         */
+    }
+
+    public static void settingsdb()
+    {
+        /**
+         * table|android_metadata|android_metadata|3|CREATE TABLE android_metadata (locale TEXT)
+         table|system|system|4|CREATE TABLE system (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE ON CONFLICT REPLACE,value TEXT)
+         index|sqlite_autoindex_system_1|system|5|
+         table|sqlite_sequence|sqlite_sequence|6|CREATE TABLE sqlite_sequence(name,seq)
+         index|systemIndex1|system|7|CREATE INDEX systemIndex1 ON system (name)
+         table|secure|secure|8|CREATE TABLE secure (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE ON CONFLICT REPLACE,value TEXT)
+         index|sqlite_autoindex_secure_1|secure|9|
+         index|secureIndex1|secure|10|CREATE INDEX secureIndex1 ON secure (name)
+         table|global|global|11|CREATE TABLE global (_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT UNIQUE ON CONFLICT REPLACE,value TEXT)
+         index|sqlite_autoindex_global_1|global|12|
+         index|globalIndex1|global|13|CREATE INDEX globalIndex1 ON global (name)
+         table|bluetooth_devices|bluetooth_devices|14|CREATE TABLE bluetooth_devices (_id INTEGER PRIMARY KEY,name TEXT,addr TEXT,channel INTEGER,type INTEGER)
+         table|bookmarks|bookmarks|15|CREATE TABLE bookmarks (_id INTEGER PRIMARY KEY,title TEXT,folder TEXT,intent TEXT,shortcut INTEGER,ordering INTEGER)
+         index|bookmarksIndex1|bookmarks|16|CREATE INDEX bookmarksIndex1 ON bookmarks (folder)
+         index|bookmarksIndex2|bookmarks|17|CREATE INDEX bookmarksIndex2 ON bookmarks (shortcut)
+
+         */
+    }
+
+    public static void android_repo()
+    {
+        /**
+         * 初始化仓库，manifest.git 里面有所有分支的代码
+         * ./repo init -u ssh://git@192.168.11.126:/home/git/sources/aosp/mirror/platform/manifest.git
+         */
+    }
+    public static  void compile_android()
+    {
+        /**
+         * http://www.android-studio.org/
+         * http://www.cnblogs.com/kissazi2/p/5244442.html
+         * mac 编译
+         * http://www.judymax.com/archives/1087
+         * mac 70g
+         * http://www.tuicool.com/articles/6ZF7Nvy
          */
     }
 }
