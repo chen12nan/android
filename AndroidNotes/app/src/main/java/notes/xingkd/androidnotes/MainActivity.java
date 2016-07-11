@@ -9,8 +9,10 @@ import android.view.Window;
 import android.widget.Toast;
 
 import notes.xingkd.androidnotes.contact.ContactFragment;
+import notes.xingkd.androidnotes.datastruct.TestList;
 import notes.xingkd.androidnotes.fragment.FragmentFactory;
 import notes.xingkd.androidnotes.fragment.LoginDialogFragment;
+import notes.xingkd.androidnotes.thread.TestAsyncTask;
 import notes.xingkd.androidnotes.thread.TestThread;
 
 /**
@@ -41,23 +43,7 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
         setContentView(R.layout.activity_main);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,R.layout.activity_main_titlebar);
 
-        content = FragmentFactory.createFragment(FragmentFactory.FragmentType.ftDefault);
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.add(R.id.main_content, content, "CONTACT");
-//        ft.addToBackStack("CONTACT");
-        Log.v(ContactFragment.TAG, "MainActivity::onCreate()");
-        ft.commit();
-        System.out.println(Thread.currentThread().getId() +" main ");
-//
-        sThread = new TestThread();
-        sThread.start();
-//
-//        sThread.testRunnable();
-//
-//        TestList.testList();
-//        Log.v(ContactFragment.TAG, "=================");
-//
-//        new TestAsyncTask().execute("a", "b", "c");
+//        testFragment();
     }
 
     @Override
@@ -113,5 +99,31 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
     public void onLoginInputComplete(String username, String password) {
         Toast.makeText(this, "ACCOUNT : " + username + " , PASSWD : " + password,
                 Toast.LENGTH_LONG).show();
+    }
+
+    public void testThread()
+    {
+        System.out.println(Thread.currentThread().getId() +" main ");
+//
+        sThread = new TestThread();
+        sThread.start();
+//
+        sThread.testRunnable();
+//
+        TestList.testList();
+        Log.v(ContactFragment.TAG, "=================");
+//
+        new TestAsyncTask().execute("a", "b", "c");
+
+    }
+
+    public void testFragment()
+    {
+        content = FragmentFactory.createFragment(FragmentFactory.FragmentType.ftDefault);
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.add(R.id.main_content, content, "CONTACT");
+//        ft.addToBackStack("CONTACT");
+        Log.v(ContactFragment.TAG, "MainActivity::onCreate()");
+        ft.commit();
     }
 }
