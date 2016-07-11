@@ -22,6 +22,7 @@ public class TestPreferenceFragment extends PreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.layout.test_preference);
+        addPreferencesFromResource(R.layout.test_preference);
 
         one = findPreference("set_3g");
         one.setOnPreferenceChangeListener(this);

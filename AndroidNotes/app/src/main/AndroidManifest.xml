@@ -15,8 +15,23 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
+
+        <!-- luncher 上有多个程序入口  -->
+        <activity-alias
+            android:name="testAlias_Name"
+            android:targetActivity=".MainActivity"
+            android:label="testAlias">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity-alias>
 
         <activity android:name=".component.HandlerActivity">
             <intent-filter>

@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import notes.xingkd.androidnotes.contact.ContactFragment;
-import notes.xingkd.androidnotes.datastruct.TestList;
 import notes.xingkd.androidnotes.fragment.FragmentFactory;
 import notes.xingkd.androidnotes.fragment.LoginDialogFragment;
 import notes.xingkd.androidnotes.thread.TestThread;
@@ -43,14 +42,16 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
         Log.v(ContactFragment.TAG, "MainActivity::onCreate()");
         ft.commit();
         System.out.println(Thread.currentThread().getId() +" main ");
-
+//
         sThread = new TestThread();
         sThread.start();
-
-        sThread.testRunnable();
-
-        TestList.testList();
-        Log.v(ContactFragment.TAG, "=================");
+//
+//        sThread.testRunnable();
+//
+//        TestList.testList();
+//        Log.v(ContactFragment.TAG, "=================");
+//
+//        new TestAsyncTask().execute("a", "b", "c");
     }
 
     @Override
@@ -105,6 +106,7 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
     // 创建搜索框， menu项
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        menu.addSubMenu("xingkod");
         return super.onCreateOptionsMenu(menu);
     }
 

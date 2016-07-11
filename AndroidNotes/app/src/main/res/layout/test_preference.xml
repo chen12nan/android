@@ -54,14 +54,25 @@
         <EditTextPreference android:key="number_edit"
             android:title="输入电话号码">
         </EditTextPreference>
-        <ListPreference android:title="部门设置" android:entries="@string/department"
-            android:entryValues="@string/department_value"
+        <ListPreference android:title="部门设置" android:entries="@array/department"
+            android:entryValues="@array/department_value"
             android:dialogTitle="选择部门"
+            android:defaultValue="综合部"
+            android:summary="请选择您喜欢的部门"
             android:key="depart_value">
         </ListPreference>
         <RingtonePreference android:ringtoneType="all" android:title="玲聲"
             android:showDefault="true" android:key="ring_key"
             android:showSilent="true">
         </RingtonePreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="软件外观皮肤设置" >
+        <ListPreference
+            android:defaultValue="black"
+            android:entries="@array/setting_skintheme"
+            android:entryValues="@array/setting_skintheme_value"
+            android:key="SkinTheme"
+            android:summary="请选择您喜欢的软件皮肤颜色"
+            android:title="皮肤颜色" />
     </PreferenceCategory>
 </PreferenceScreen>

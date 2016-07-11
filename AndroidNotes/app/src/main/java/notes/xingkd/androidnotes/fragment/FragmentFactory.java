@@ -16,7 +16,8 @@ public class FragmentFactory  {
         ftList,
         ftDialog,
         ftLoginDialog,
-        ftPreference
+        ftPreference,
+        ftAsyncTask,
     }
 
     public static Fragment createFragment(FragmentType type)
@@ -48,6 +49,10 @@ public class FragmentFactory  {
         else if(type == FragmentType.ftPreference)
         {
             return new TestPreferenceFragment();
+        }
+        else if(type == FragmentType.ftAsyncTask)
+        {
+            return new AsyncTaskFragment();
         }
         else
         {

@@ -416,6 +416,8 @@ public class Notes {
         /**
          * 初始化仓库，manifest.git 里面有所有分支的代码
          * ./repo init -u ssh://git@192.168.11.126:/home/git/sources/aosp/mirror/platform/manifest.git
+         *
+         * repo 文件里的URL是对应的分支
          */
     }
     public static  void compile_android()
@@ -427,6 +429,13 @@ public class Notes {
          * http://www.judymax.com/archives/1087
          * mac 70g
          * http://www.tuicool.com/articles/6ZF7Nvy
+         */
+    }
+
+    public static void youcompleteme()
+    {
+        /**
+         * http://blog.jobbole.com/58978/
          */
     }
 }
