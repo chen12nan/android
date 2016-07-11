@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import notes.xingkd.androidnotes.R;
 import notes.xingkd.androidnotes.component.HandlerActivity;
+import notes.xingkd.androidnotes.component.TitleBarActivity;
 import notes.xingkd.androidnotes.preference.TestPreferenceActivity;
 
 /**
@@ -30,6 +33,8 @@ public class TestFragment extends Fragment implements View.OnClickListener{
         btn3.setOnClickListener(this);
         Button btn4 = (Button)view.findViewById(R.id.tf_btn4);
         btn4.setOnClickListener(this);
+        Button btn5 = (Button)view.findViewById(R.id.tf_btn5);
+        btn5.setOnClickListener(this);
 
         return view;
     }
@@ -56,8 +61,17 @@ public class TestFragment extends Fragment implements View.OnClickListener{
                 Intent preferenceIntent = new Intent(getActivity(), TestPreferenceActivity.class);
                 getContext().startActivity(preferenceIntent);
                 break;
+            case R.id.tf_btn5:
+                Intent titleBarIntent = new Intent(getActivity(), TitleBarActivity.class);
+                getContext().startActivity(titleBarIntent);
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.activity_menu,menu);
     }
 }

@@ -5,7 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
+import android.view.Window;
 import android.widget.Toast;
 
 import notes.xingkd.androidnotes.contact.ContactFragment;
@@ -30,12 +30,18 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
     private  TestThread sThread;
 
     public final static String PREFER_TAG="PreferenceFragment";
+    public final static String MENU_TAG="MenuTag";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("MainActivity");
+        setTheme(R.style.TestTitleBar);
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.activity_main);
-        content = FragmentFactory.createFragment(FragmentFactory.FragmentType.ftPreference);
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,R.layout.activity_main_titlebar);
+
+        content = FragmentFactory.createFragment(FragmentFactory.FragmentType.ftDefault);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.add(R.id.main_content, content, "CONTACT");
 //        ft.addToBackStack("CONTACT");
@@ -101,13 +107,6 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
     protected void onDestroy() {
         super.onDestroy();
         Log.v(ContactFragment.TAG, "MainActivity::onDestroy()");
-    }
-
-    // 创建搜索框， menu项
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        menu.addSubMenu("xingkod");
-        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

@@ -34,4 +34,12 @@
         android:text="Preference Activity"
         android:textAllCaps="false"
         android:id="@+id/tf_btn4"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TitleBarActivity"
+        android:textAllCaps="false"
+        android:id="@+id/tf_btn5"/>
+
 </LinearLayout>

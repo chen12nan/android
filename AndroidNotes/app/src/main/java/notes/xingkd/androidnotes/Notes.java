@@ -438,4 +438,47 @@ public class Notes {
          * http://blog.jobbole.com/58978/
          */
     }
+
+    public static void android_print()
+    {
+        /**
+         * android Settings 打印功能测试
+         * http://blog.csdn.net/a1031359915/article/details/21465195
+         */
+    }
+
+    public static void theme_style()
+    {
+        /**
+         http://blog.csdn.net/sshhbb/article/details/7219838
+
+         1，Theme是针对窗体级别的，改变窗体样式；
+         2，Style是针对窗体元素级别的，改变指定控件或者Layout的样式。
+
+         可以在styles文件中设置窗口的style，然后在manifest.xml 文件中针对某个Activity设置
+         android:theme="@styles/custonStyle"
+         或者用函数调用的方式实现
+
+         setTheme(R.style.custonStyles);
+
+         同时你可以定义某个style，然后在layout文件中使用这个style，例如：
+
+         // styles.xml
+         <?xml version="1.0" encoding="utf-8"?>
+         <resources>
+         <style name="SpecialText" parent="@style/Text">
+         <item name="android:textSize">18sp</item>
+         <item name="android:textColor">#008</item>
+         </style>
+         </resources>
+
+         //layout.xml
+         <EditText id="@+id/text1"
+         style="@style/SpecialText"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="Hello, World!" />
+
+         */
+    }
 }

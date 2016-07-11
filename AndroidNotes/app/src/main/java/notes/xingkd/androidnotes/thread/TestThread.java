@@ -15,8 +15,8 @@ public class TestThread extends Thread {
         while (true)
         {
             System.out.println("TestThread thread and id = " + currentThread().getId());
-            TestAsyncTask task = new TestAsyncTask();
-            task.execute();
+//            TestAsyncTask task = new TestAsyncTask();
+//            task.execute();
             // exception
 //            task.execute();
             try{

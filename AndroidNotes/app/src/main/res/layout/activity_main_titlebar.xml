@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <Button
+        android:id="@+id/btnLeft"
+        android:text="返回" android:textSize="15.0sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true" />
+    <Button
+        android:id="@+id/btnRight"
+        android:text="发布" android:textSize="15.0sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12.0dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+    <TextView android:textSize="22.0sp"
+        android:textColor="#ffffffff"
+        android:ellipsize="middle"
+        android:gravity="center_horizontal"
+        android:id="@+id/btntitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="故障管理" android:singleLine="true" android:layout_toLeftOf="@+id/btnRight" android:layout_toRightOf="@+id/btnLeft" android:layout_centerInParent="true" android:layout_alignWithParentIfMissing="true" >
+    </TextView>
+</RelativeLayout>
