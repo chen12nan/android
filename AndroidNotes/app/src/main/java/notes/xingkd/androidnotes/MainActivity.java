@@ -5,7 +5,6 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Window;
 import android.widget.Toast;
 
 import notes.xingkd.androidnotes.contact.ContactFragment;
@@ -37,13 +36,14 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("MainActivity");
-        setTheme(R.style.TestTitleBar);
-        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+//        setTitle("MainActivity");
+//        setTheme(R.style.TestTitleBar);
+//        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.activity_main);
-        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,R.layout.activity_main_titlebar);
+//        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,R.layout.activity_main_titlebar);
 
-//        testFragment();
+        testFragment();
+        getSystemService()
     }
 
     @Override
