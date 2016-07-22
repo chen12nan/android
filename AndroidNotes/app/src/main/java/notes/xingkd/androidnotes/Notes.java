@@ -5,6 +5,28 @@ package notes.xingkd.androidnotes;
  */
 public class Notes {
 
+    public static void context()
+    {
+        /**
+         * http://892848153.iteye.com/blog/1913963
+         *  总Context实例个数 = Service个数 + Activity个数 + 1（Application对应的Context实例）
+         */
+    }
+
+    public static void ams_activity_task_application()
+    {
+        /**
+         * http://www.cnblogs.com/franksunny/archive/2012/04/17/2453403.html
+         */
+    }
+    public static void binder()
+    {
+        /**
+         * http://blog.csdn.net/yangzhiloveyou/article/details/14043801
+         * http://blog.csdn.net/yangzhiloveyou/article/details/14043801
+         *  http://blog.csdn.net/21cnbao/article/details/8087326
+         */
+    }
     public static void needToDo()
     {
         /**
