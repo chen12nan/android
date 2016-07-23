@@ -1,0 +1,12 @@
+@startuml
+skinparam defaultFontName font-arphic-uming
+' skinparam handwritten true
+skinparam backgroundColor #EEEBDC
+
+ServiceManager --> ServiceManager : register and add TimerService
+TimerClient --> TimerClient : get service
+TimerClient --> TimerClient : new CallbackService
+TimerClient --> TimerClient : new binder
+TimerClient --> TimerService : registerCallback binder
+
+@enduml

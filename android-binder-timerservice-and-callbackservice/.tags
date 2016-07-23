@@ -1,0 +1,62 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BnCallbackService	ICallbackService.h	/^class BnCallbackService: public BnInterface<ICallbackService> {$/;"	c	namespace:android
+BnTimerService	ITimerService.h	/^class BnTimerService: public BnInterface<ITimerService> {$/;"	c	namespace:android
+BpCallbackService	ICallbackService.cpp	/^    BpCallbackService(const sp<IBinder>& impl)$/;"	f	class:android::BpCallbackService
+BpCallbackService	ICallbackService.cpp	/^class BpCallbackService: public BpInterface<ICallbackService>$/;"	c	namespace:android	file:
+BpTimerService	ITimerService.cpp	/^    BpTimerService(const sp<IBinder>& impl)$/;"	f	class:android::BpTimerService
+BpTimerService	ITimerService.cpp	/^class BpTimerService: public BpInterface<ITimerService>$/;"	c	namespace:android	file:
+CallbackSERVICE_H	CallbackService.h	2;"	d
+CallbackService	CallbackService.cpp	/^CallbackService::CallbackService()$/;"	f	class:android::CallbackService
+CallbackService	CallbackService.h	/^class CallbackService: public BnCallbackService$/;"	c	namespace:android
+ICallbackSERVICE_H	ICallbackService.h	2;"	d
+ICallbackService	ICallbackService.h	/^class ICallbackService: public IInterface {$/;"	c	namespace:android
+ITIMERSERVICE_H	ITimerService.h	2;"	d
+ITimerService	ITimerService.h	/^class ITimerService: public IInterface {$/;"	c	namespace:android
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE := libcallbackservice$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE := libtimerservice$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE := timerclient$/;"	m
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE:= timerserver$/;"	m
+LOCAL_MODULE_TAGS	Android.mk	/^LOCAL_MODULE_TAGS := optional$/;"	m
+LOCAL_PATH	Android.mk	/^LOCAL_PATH:= $(call my-dir)$/;"	m
+LOCAL_SRC_FILES	Android.mk	/^LOCAL_SRC_FILES := TimerClient.cpp$/;"	m
+LOCAL_SRC_FILES	Android.mk	/^LOCAL_SRC_FILES := TimerServer.cpp$/;"	m
+LOG_TAG	CallbackService.cpp	1;"	d	file:
+LOG_TAG	ICallbackService.cpp	1;"	d	file:
+LOG_TAG	ITimerService.cpp	1;"	d	file:
+LOG_TAG	TimerClient.cpp	1;"	d	file:
+LOG_TAG	TimerServer.cpp	1;"	d	file:
+LOG_TAG	TimerService.cpp	1;"	d	file:
+TIMERSERVICE_H	TimerService.h	2;"	d
+TRANSACTION_EXECUTE	ICallbackService.h	/^        TRANSACTION_EXECUTE = IBinder::FIRST_CALL_TRANSACTION,$/;"	e	enum:android::BnCallbackService::__anon2
+TRANSACTION_REGISTER_CALLBACK	ITimerService.h	/^        TRANSACTION_REGISTER_CALLBACK = IBinder::FIRST_CALL_TRANSACTION,$/;"	e	enum:android::BnTimerService::__anon1
+TimerService	TimerService.cpp	/^TimerService::TimerService()$/;"	f	class:android::TimerService
+TimerService	TimerService.h	/^class TimerService: public BnTimerService, Thread$/;"	c	namespace:android
+android	CallbackService.cpp	/^namespace android {$/;"	n	file:
+android	CallbackService.h	/^namespace android {$/;"	n
+android	ICallbackService.cpp	/^namespace android {$/;"	n	file:
+android	ICallbackService.h	/^namespace android {$/;"	n
+android	ITimerService.cpp	/^namespace android {$/;"	n	file:
+android	ITimerService.h	/^namespace android {$/;"	n
+android	TimerService.cpp	/^namespace android {$/;"	n	file:
+android	TimerService.h	/^namespace android {$/;"	n
+execute	CallbackService.cpp	/^void CallbackService::execute()$/;"	f	class:android::CallbackService
+execute	ICallbackService.cpp	/^    virtual void execute()$/;"	f	class:android::BpCallbackService
+mCallbacks	TimerService.h	/^    Vector<sp<ICallbackService> >  mCallbacks;$/;"	m	class:android::TimerService
+mCondition	CallbackService.h	/^    mutable Condition mCondition;$/;"	m	class:android::CallbackService
+mLock	CallbackService.h	/^    mutable Mutex mLock;$/;"	m	class:android::CallbackService
+mLock	TimerService.h	/^    mutable Mutex               mLock;$/;"	m	class:android::TimerService
+mTimeouts	TimerService.h	/^    KeyedVector<sp<ICallbackService>, int> mTimeouts;$/;"	m	class:android::TimerService
+main	TimerClient.cpp	/^int main()$/;"	f
+main	TimerServer.cpp	/^int main()$/;"	f
+onTransact	ICallbackService.cpp	/^status_t BnCallbackService::onTransact($/;"	f	class:android::BnCallbackService
+onTransact	ITimerService.cpp	/^status_t BnTimerService::onTransact($/;"	f	class:android::BnTimerService
+registerCallback	ITimerService.cpp	/^    virtual void registerCallback(sp<IBinder>& binder, int timeout)$/;"	f	class:android::BpTimerService
+registerCallback	TimerService.cpp	/^void TimerService::registerCallback(sp<IBinder>& binder, int timeout)$/;"	f	class:android::TimerService
+threadLoop	TimerService.cpp	/^bool TimerService::threadLoop()$/;"	f	class:android::TimerService
+~CallbackService	CallbackService.cpp	/^CallbackService::~CallbackService()$/;"	f	class:android::CallbackService
+~TimerService	TimerService.cpp	/^TimerService::~TimerService()$/;"	f	class:android::TimerService

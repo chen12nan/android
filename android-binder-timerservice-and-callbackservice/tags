@@ -1,0 +1,120 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BnCallbackService	ICallbackService.h	/^class BnCallbackService: public BnInterface<ICallbackService> {$/;"	c	language:C++	namespace:android	inherits:BnInterface
+BnTimerService	ITimerService.h	/^class BnTimerService: public BnInterface<ITimerService> {$/;"	c	language:C++	namespace:android	inherits:BnInterface
+BpCallbackService	ICallbackService.cpp	/^    BpCallbackService(const sp<IBinder>& impl)$/;"	f	language:C++	class:android::BpCallbackService	access:public	signature:(const sp<IBinder>& impl)
+BpCallbackService	ICallbackService.cpp	/^class BpCallbackService: public BpInterface<ICallbackService>$/;"	c	language:C++	namespace:android	file:	inherits:BpInterface
+BpTimerService	ITimerService.cpp	/^    BpTimerService(const sp<IBinder>& impl)$/;"	f	language:C++	class:android::BpTimerService	access:public	signature:(const sp<IBinder>& impl)
+BpTimerService	ITimerService.cpp	/^class BpTimerService: public BpInterface<ITimerService>$/;"	c	language:C++	namespace:android	file:	inherits:BpInterface
+CallbackSERVICE_H	CallbackService.h	2;"	d	language:C++
+CallbackService	CallbackService.cpp	/^CallbackService::CallbackService()$/;"	f	language:C++	class:android::CallbackService	signature:()
+CallbackService	CallbackService.h	/^    CallbackService();$/;"	p	language:C++	class:android::CallbackService	access:public	signature:()
+CallbackService	CallbackService.h	/^class CallbackService: public BnCallbackService$/;"	c	language:C++	namespace:android	inherits:BnCallbackService
+DECLARE_META_INTERFACE	ICallbackService.h	/^    DECLARE_META_INTERFACE(CallbackService);$/;"	p	language:C++	class:android::ICallbackService	access:public	signature:(CallbackService)
+DECLARE_META_INTERFACE	ITimerService.h	/^    DECLARE_META_INTERFACE(TimerService);$/;"	p	language:C++	class:android::ITimerService	access:public	signature:(TimerService)
+ICallbackSERVICE_H	ICallbackService.h	2;"	d	language:C++
+ICallbackService	ICallbackService.h	/^class ICallbackService: public IInterface {$/;"	c	language:C++	namespace:android	inherits:IInterface
+IMPLEMENT_META_INTERFACE	ICallbackService.cpp	/^IMPLEMENT_META_INTERFACE(CallbackService, "chengyihe.test.ICallbackService");$/;"	p	language:C++	namespace:android	file:	signature:(CallbackService, Ó)
+IMPLEMENT_META_INTERFACE	ITimerService.cpp	/^IMPLEMENT_META_INTERFACE(TimerService, "chengyihe.test.ITimerService");$/;"	p	language:C++	namespace:android	file:	signature:(TimerService, Ó)
+ITIMERSERVICE_H	ITimerService.h	2;"	d	language:C++
+ITimerService	ITimerService.h	/^class ITimerService: public IInterface {$/;"	c	language:C++	namespace:android	inherits:IInterface
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE := libcallbackservice$/;"	m	language:Make
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE := libtimerservice$/;"	m	language:Make
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE := timerclient$/;"	m	language:Make
+LOCAL_MODULE	Android.mk	/^LOCAL_MODULE:= timerserver$/;"	m	language:Make
+LOCAL_MODULE_TAGS	Android.mk	/^LOCAL_MODULE_TAGS := optional$/;"	m	language:Make
+LOCAL_PATH	Android.mk	/^LOCAL_PATH:= $(call my-dir)$/;"	m	language:Make
+LOCAL_SRC_FILES	Android.mk	/^LOCAL_SRC_FILES := TimerClient.cpp$/;"	m	language:Make
+LOCAL_SRC_FILES	Android.mk	/^LOCAL_SRC_FILES := TimerServer.cpp$/;"	m	language:Make
+LOG_TAG	CallbackService.cpp	1;"	d	language:C++	file:
+LOG_TAG	ICallbackService.cpp	1;"	d	language:C++	file:
+LOG_TAG	ITimerService.cpp	1;"	d	language:C++	file:
+LOG_TAG	TimerClient.cpp	1;"	d	language:C++	file:
+LOG_TAG	TimerServer.cpp	1;"	d	language:C++	file:
+LOG_TAG	TimerService.cpp	1;"	d	language:C++	file:
+TIMERSERVICE_H	TimerService.h	2;"	d	language:C++
+TRANSACTION_EXECUTE	ICallbackService.h	/^        TRANSACTION_EXECUTE = IBinder::FIRST_CALL_TRANSACTION,$/;"	e	language:C++	enum:android::BnCallbackService::__anon2
+TRANSACTION_REGISTER_CALLBACK	ITimerService.h	/^        TRANSACTION_REGISTER_CALLBACK = IBinder::FIRST_CALL_TRANSACTION,$/;"	e	language:C++	enum:android::BnTimerService::__anon1
+TimerService	TimerService.cpp	/^TimerService::TimerService()$/;"	f	language:C++	class:android::TimerService	signature:()
+TimerService	TimerService.h	/^    TimerService();$/;"	p	language:C++	class:android::TimerService	access:public	signature:()
+TimerService	TimerService.h	/^class TimerService: public BnTimerService, Thread$/;"	c	language:C++	namespace:android	inherits:BnTimerService,Thread
+android	CallbackService.cpp	/^namespace android {$/;"	n	language:C++	file:
+android	CallbackService.h	/^namespace android {$/;"	n	language:C++
+android	ICallbackService.cpp	/^namespace android {$/;"	n	language:C++	file:
+android	ICallbackService.h	/^namespace android {$/;"	n	language:C++
+android	ITimerService.cpp	/^namespace android {$/;"	n	language:C++	file:
+android	ITimerService.h	/^namespace android {$/;"	n	language:C++
+android	TimerService.cpp	/^namespace android {$/;"	n	language:C++	file:
+android	TimerService.h	/^namespace android {$/;"	n	language:C++
+android::BnCallbackService	ICallbackService.h	/^class BnCallbackService: public BnInterface<ICallbackService> {$/;"	c	language:C++	namespace:android	inherits:BnInterface
+android::BnCallbackService::TRANSACTION_EXECUTE	ICallbackService.h	/^        TRANSACTION_EXECUTE = IBinder::FIRST_CALL_TRANSACTION,$/;"	e	language:C++	enum:android::BnCallbackService::__anon2
+android::BnCallbackService::onTransact	ICallbackService.cpp	/^status_t BnCallbackService::onTransact($/;"	f	language:C++	class:android::BnCallbackService	signature:( uint32_t code, const Parcel& data, Parcel* reply, uint32_t flags)
+android::BnCallbackService::onTransact	ICallbackService.h	/^    virtual status_t onTransact(uint32_t code, const Parcel& data,$/;"	p	language:C++	class:android::BnCallbackService	access:public	signature:(uint32_t code, const Parcel& data, Parcel* reply, uint32_t flag = 0)
+android::BnTimerService	ITimerService.h	/^class BnTimerService: public BnInterface<ITimerService> {$/;"	c	language:C++	namespace:android	inherits:BnInterface
+android::BnTimerService::TRANSACTION_REGISTER_CALLBACK	ITimerService.h	/^        TRANSACTION_REGISTER_CALLBACK = IBinder::FIRST_CALL_TRANSACTION,$/;"	e	language:C++	enum:android::BnTimerService::__anon1
+android::BnTimerService::onTransact	ITimerService.cpp	/^status_t BnTimerService::onTransact($/;"	f	language:C++	class:android::BnTimerService	signature:( uint32_t code, const Parcel& data, Parcel* reply, uint32_t flags)
+android::BnTimerService::onTransact	ITimerService.h	/^    virtual status_t onTransact(uint32_t code, const Parcel& data,$/;"	p	language:C++	class:android::BnTimerService	access:public	signature:(uint32_t code, const Parcel& data, Parcel* reply, uint32_t flag = 0)
+android::BpCallbackService	ICallbackService.cpp	/^class BpCallbackService: public BpInterface<ICallbackService>$/;"	c	language:C++	namespace:android	file:	inherits:BpInterface
+android::BpCallbackService::BpCallbackService	ICallbackService.cpp	/^    BpCallbackService(const sp<IBinder>& impl)$/;"	f	language:C++	class:android::BpCallbackService	access:public	signature:(const sp<IBinder>& impl)
+android::BpCallbackService::execute	ICallbackService.cpp	/^    virtual void execute()$/;"	f	language:C++	class:android::BpCallbackService	access:public	signature:()
+android::BpTimerService	ITimerService.cpp	/^class BpTimerService: public BpInterface<ITimerService>$/;"	c	language:C++	namespace:android	file:	inherits:BpInterface
+android::BpTimerService::BpTimerService	ITimerService.cpp	/^    BpTimerService(const sp<IBinder>& impl)$/;"	f	language:C++	class:android::BpTimerService	access:public	signature:(const sp<IBinder>& impl)
+android::BpTimerService::registerCallback	ITimerService.cpp	/^    virtual void registerCallback(sp<IBinder>& binder, int timeout)$/;"	f	language:C++	class:android::BpTimerService	access:public	signature:(sp<IBinder>& binder, int timeout)
+android::CallbackService	CallbackService.h	/^class CallbackService: public BnCallbackService$/;"	c	language:C++	namespace:android	inherits:BnCallbackService
+android::CallbackService::CallbackService	CallbackService.cpp	/^CallbackService::CallbackService()$/;"	f	language:C++	class:android::CallbackService	signature:()
+android::CallbackService::CallbackService	CallbackService.h	/^    CallbackService();$/;"	p	language:C++	class:android::CallbackService	access:public	signature:()
+android::CallbackService::execute	CallbackService.cpp	/^void CallbackService::execute()$/;"	f	language:C++	class:android::CallbackService	signature:()
+android::CallbackService::execute	CallbackService.h	/^    virtual void execute();$/;"	p	language:C++	class:android::CallbackService	access:public	signature:()
+android::CallbackService::mCondition	CallbackService.h	/^    mutable Condition mCondition;$/;"	m	language:C++	class:android::CallbackService	access:public
+android::CallbackService::mLock	CallbackService.h	/^    mutable Mutex mLock;$/;"	m	language:C++	class:android::CallbackService	access:public
+android::CallbackService::~CallbackService	CallbackService.cpp	/^CallbackService::~CallbackService()$/;"	f	language:C++	class:android::CallbackService	signature:()
+android::CallbackService::~CallbackService	CallbackService.h	/^    ~CallbackService();$/;"	p	language:C++	class:android::CallbackService	access:public	signature:()
+android::ICallbackService	ICallbackService.h	/^class ICallbackService: public IInterface {$/;"	c	language:C++	namespace:android	inherits:IInterface
+android::ICallbackService::DECLARE_META_INTERFACE	ICallbackService.h	/^    DECLARE_META_INTERFACE(CallbackService);$/;"	p	language:C++	class:android::ICallbackService	access:public	signature:(CallbackService)
+android::ICallbackService::execute	ICallbackService.h	/^    virtual void execute() = 0;$/;"	p	language:C++	class:android::ICallbackService	access:public	signature:()
+android::IMPLEMENT_META_INTERFACE	ICallbackService.cpp	/^IMPLEMENT_META_INTERFACE(CallbackService, "chengyihe.test.ICallbackService");$/;"	p	language:C++	namespace:android	file:	signature:(CallbackService, Ó)
+android::IMPLEMENT_META_INTERFACE	ITimerService.cpp	/^IMPLEMENT_META_INTERFACE(TimerService, "chengyihe.test.ITimerService");$/;"	p	language:C++	namespace:android	file:	signature:(TimerService, Ó)
+android::ITimerService	ITimerService.h	/^class ITimerService: public IInterface {$/;"	c	language:C++	namespace:android	inherits:IInterface
+android::ITimerService::DECLARE_META_INTERFACE	ITimerService.h	/^    DECLARE_META_INTERFACE(TimerService);$/;"	p	language:C++	class:android::ITimerService	access:public	signature:(TimerService)
+android::ITimerService::registerCallback	ITimerService.h	/^    virtual void registerCallback(sp<IBinder>& binder, int timeout) = 0;$/;"	p	language:C++	class:android::ITimerService	access:public	signature:(sp<IBinder>& binder, int timeout)
+android::TimerService	TimerService.h	/^class TimerService: public BnTimerService, Thread$/;"	c	language:C++	namespace:android	inherits:BnTimerService,Thread
+android::TimerService::TimerService	TimerService.cpp	/^TimerService::TimerService()$/;"	f	language:C++	class:android::TimerService	signature:()
+android::TimerService::TimerService	TimerService.h	/^    TimerService();$/;"	p	language:C++	class:android::TimerService	access:public	signature:()
+android::TimerService::mCallbacks	TimerService.h	/^    Vector<sp<ICallbackService> >  mCallbacks;$/;"	m	language:C++	class:android::TimerService	access:private
+android::TimerService::mLock	TimerService.h	/^    mutable Mutex               mLock;$/;"	m	language:C++	class:android::TimerService	access:private
+android::TimerService::mTimeouts	TimerService.h	/^    KeyedVector<sp<ICallbackService>, int> mTimeouts;$/;"	m	language:C++	class:android::TimerService	access:private
+android::TimerService::registerCallback	TimerService.cpp	/^void TimerService::registerCallback(sp<IBinder>& binder, int timeout)$/;"	f	language:C++	class:android::TimerService	signature:(sp<IBinder>& binder, int timeout)
+android::TimerService::registerCallback	TimerService.h	/^    void registerCallback(sp<IBinder>& binder, int sec);$/;"	p	language:C++	class:android::TimerService	access:public	signature:(sp<IBinder>& binder, int sec)
+android::TimerService::threadLoop	TimerService.cpp	/^bool TimerService::threadLoop()$/;"	f	language:C++	class:android::TimerService	signature:()
+android::TimerService::threadLoop	TimerService.h	/^    virtual bool threadLoop();$/;"	p	language:C++	class:android::TimerService	access:public	signature:()
+android::TimerService::~TimerService	TimerService.cpp	/^TimerService::~TimerService()$/;"	f	language:C++	class:android::TimerService	signature:()
+android::TimerService::~TimerService	TimerService.h	/^    ~TimerService();$/;"	p	language:C++	class:android::TimerService	access:public	signature:()
+execute	CallbackService.cpp	/^void CallbackService::execute()$/;"	f	language:C++	class:android::CallbackService	signature:()
+execute	CallbackService.h	/^    virtual void execute();$/;"	p	language:C++	class:android::CallbackService	access:public	signature:()
+execute	ICallbackService.cpp	/^    virtual void execute()$/;"	f	language:C++	class:android::BpCallbackService	access:public	signature:()
+execute	ICallbackService.h	/^    virtual void execute() = 0;$/;"	p	language:C++	class:android::ICallbackService	access:public	signature:()
+mCallbacks	TimerService.h	/^    Vector<sp<ICallbackService> >  mCallbacks;$/;"	m	language:C++	class:android::TimerService	access:private
+mCondition	CallbackService.h	/^    mutable Condition mCondition;$/;"	m	language:C++	class:android::CallbackService	access:public
+mLock	CallbackService.h	/^    mutable Mutex mLock;$/;"	m	language:C++	class:android::CallbackService	access:public
+mLock	TimerService.h	/^    mutable Mutex               mLock;$/;"	m	language:C++	class:android::TimerService	access:private
+mTimeouts	TimerService.h	/^    KeyedVector<sp<ICallbackService>, int> mTimeouts;$/;"	m	language:C++	class:android::TimerService	access:private
+main	TimerClient.cpp	/^int main()$/;"	f	language:C++	signature:()
+main	TimerServer.cpp	/^int main()$/;"	f	language:C++	signature:()
+onTransact	ICallbackService.cpp	/^status_t BnCallbackService::onTransact($/;"	f	language:C++	class:android::BnCallbackService	signature:( uint32_t code, const Parcel& data, Parcel* reply, uint32_t flags)
+onTransact	ICallbackService.h	/^    virtual status_t onTransact(uint32_t code, const Parcel& data,$/;"	p	language:C++	class:android::BnCallbackService	access:public	signature:(uint32_t code, const Parcel& data, Parcel* reply, uint32_t flag = 0)
+onTransact	ITimerService.cpp	/^status_t BnTimerService::onTransact($/;"	f	language:C++	class:android::BnTimerService	signature:( uint32_t code, const Parcel& data, Parcel* reply, uint32_t flags)
+onTransact	ITimerService.h	/^    virtual status_t onTransact(uint32_t code, const Parcel& data,$/;"	p	language:C++	class:android::BnTimerService	access:public	signature:(uint32_t code, const Parcel& data, Parcel* reply, uint32_t flag = 0)
+registerCallback	ITimerService.cpp	/^    virtual void registerCallback(sp<IBinder>& binder, int timeout)$/;"	f	language:C++	class:android::BpTimerService	access:public	signature:(sp<IBinder>& binder, int timeout)
+registerCallback	ITimerService.h	/^    virtual void registerCallback(sp<IBinder>& binder, int timeout) = 0;$/;"	p	language:C++	class:android::ITimerService	access:public	signature:(sp<IBinder>& binder, int timeout)
+registerCallback	TimerService.cpp	/^void TimerService::registerCallback(sp<IBinder>& binder, int timeout)$/;"	f	language:C++	class:android::TimerService	signature:(sp<IBinder>& binder, int timeout)
+registerCallback	TimerService.h	/^    void registerCallback(sp<IBinder>& binder, int sec);$/;"	p	language:C++	class:android::TimerService	access:public	signature:(sp<IBinder>& binder, int sec)
+threadLoop	TimerService.cpp	/^bool TimerService::threadLoop()$/;"	f	language:C++	class:android::TimerService	signature:()
+threadLoop	TimerService.h	/^    virtual bool threadLoop();$/;"	p	language:C++	class:android::TimerService	access:public	signature:()
+~CallbackService	CallbackService.cpp	/^CallbackService::~CallbackService()$/;"	f	language:C++	class:android::CallbackService	signature:()
+~CallbackService	CallbackService.h	/^    ~CallbackService();$/;"	p	language:C++	class:android::CallbackService	access:public	signature:()
+~TimerService	TimerService.cpp	/^TimerService::~TimerService()$/;"	f	language:C++	class:android::TimerService	signature:()
+~TimerService	TimerService.h	/^    ~TimerService();$/;"	p	language:C++	class:android::TimerService	access:public	signature:()

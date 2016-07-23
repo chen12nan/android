@@ -1,0 +1,15 @@
+@startuml
+skinparam defaultFontName font-arphic-uming
+' skinparam handwritten true
+skinparam backgroundColor #EEEBDC
+
+ITimerService --|> IInterface
+BnTimerService --|> "BnInterface<ITimerService>"
+CallbackService --|> BnCallbackService
+ICallbackService --|> IInterface
+BnCallbackService --|> "BnInterface<ICallbackService>"
+TimerService --|> BnTimerService
+TimerService --|> Thread
+BpTimerService --|> "BpInterface<ITimerService>"
+
+@enduml
