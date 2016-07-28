@@ -43,7 +43,9 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
 //        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE,R.layout.activity_main_titlebar);
 
         testFragment();
-        getSystemService()
+        String str = "MenuFirst";
+        Log.v("judegment" , "  " + str.equals(getResources().getString(R.string.menu_first))
+                + "  " + str + "  " + getResources().getString(R.string.menu_first));
     }
 
     @Override

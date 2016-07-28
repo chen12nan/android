@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 
 import notes.xingkd.androidnotes.R;
@@ -31,6 +30,8 @@ public class TitleBarActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /**
+        android:theme="@style/TestTitleBar" 需要在manifestx.xml <application></application> 设置
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE); //声明使用自定义标题
         //设置窗体样式
         getWindow().setFeatureInt(
@@ -38,13 +39,7 @@ public class TitleBarActivity extends Activity {
                 R.layout.titlebar_titlebar //设置对应的布局
         );//自定义布局赋值
         leftButton=(Button)findViewById(R.id.titleBarButton);
-//        leftButton.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                showDialog(R.id.btnLeft);
-//            }
-//        });
+        */
     }
 
     @Nullable
@@ -139,5 +134,4 @@ public class TitleBarActivity extends Activity {
         }
         return super.onMenuItemSelected(featureId, item);
     }
-
 }

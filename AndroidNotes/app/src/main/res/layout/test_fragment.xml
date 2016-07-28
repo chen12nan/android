@@ -7,39 +7,45 @@
 
     <!--设置Button字符不自动变大写-->
     <!--android:textAllCaps="false"-->
-    <Button
-        android:layout_width="wrap_content"
+    <ListView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Test Dialog"
-        android:textAllCaps="false"
-        android:id="@+id/tf_btn1" />
+        android:id="@+id/tf_listView"
+        android:layout_gravity="center_horizontal" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Login Dialog"
-        android:id="@+id/tf_btn2"/>
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Test Dialog"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:id="@+id/tf_btn1" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Handler Message"
-        android:textAllCaps="false"
-        android:id="@+id/tf_btn3"/>
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:text="Login Dialog"-->
+        <!--android:id="@+id/tf_btn2"/>-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Preference Activity"
-        android:textAllCaps="false"
-        android:id="@+id/tf_btn4"/>
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Handler Message"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:id="@+id/tf_btn3"/>-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TitleBarActivity"
-        android:textAllCaps="false"
-        android:id="@+id/tf_btn5"/>
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Preference Activity"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:id="@+id/tf_btn4"/>-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="TitleBarActivity"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:id="@+id/tf_btn5"/>-->
 
 </LinearLayout>
