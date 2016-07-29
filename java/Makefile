@@ -1,5 +1,5 @@
 main: ./com/test/Test.java Sync.java
-	javac ./com/test/Test.java
+	javac ./com/test/Test.java ./com/test/DataStruct.java
 	jar cvf test.jar ./com/test/*.class
 	echo "jar package finished ..."
 	javac -classpath ./test.jar Sync.java

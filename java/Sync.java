@@ -1,4 +1,9 @@
 import com.test.*;
+import java.io.ObjectOutputStream;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
 //import javax.swing.JButton;
 
 public class Sync{
@@ -70,6 +75,41 @@ public class Sync{
 	}
 
 	public static void main(String[] args)
+	{
+		testTransient();
+	}
+	
+	public static void testTransient()
+	{
+		DataStruct.UserInfo userInfo = new DataStruct.UserInfo("Jim", "123456");
+		DataStruct.UserInfo uInfo = new DataStruct.UserInfo("Tom", "123456");
+		System.out.println(userInfo);
+
+		try{
+			ObjectOutputStream o = new ObjectOutputStream(new FileOutputStream("UserInfo.out"));
+			o.writeObject(userInfo);
+			o.writeObject(uInfo);
+			o.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		try{
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("UserInfo.out"));
+			DataStruct.UserInfo info = (DataStruct.UserInfo) in.readObject();
+			DataStruct.UserInfo ui = (DataStruct.UserInfo) in.readObject();
+			System.out.println(info.toString());
+			System.out.println(ui.toString());
+
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public static void testNotify_Wait()
 	{
 		Object obj = new Object();
 
