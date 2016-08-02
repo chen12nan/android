@@ -10,6 +10,9 @@ public class Notes {
         /**
          * http://892848153.iteye.com/blog/1913963
          *  总Context实例个数 = Service个数 + Activity个数 + 1（Application对应的Context实例）
+         *
+         *  androidManifest.xml 的属性说明
+         *  http://blog.csdn.net/ithomer/article/details/8138409
          */
     }
 
