@@ -114,7 +114,7 @@ public class AsyncTaskFragment extends Fragment {
 //                task.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
                 // use AsyncTask#THREAD_POOL_EXECUTOR is the same to older version #execute() (less than API 11)
                 // but different from newer version of #execute()
-//                task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+//                task.executeOFnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
                 // one by one, same to newer version of #execute()
 //                task.executeOnExecutor(SINGLE_TASK_EXECUTOR);
                 // execute tasks at some limit which can be customized

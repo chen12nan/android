@@ -454,6 +454,9 @@ public class Notes {
          * http://www.judymax.com/archives/1087
          * mac 70g
          * http://www.tuicool.com/articles/6ZF7Nvy
+         *
+         * android directory description
+         * https://www.ibm.com/developerworks/cn/opensource/os-cn-android-build/
          */
     }
 

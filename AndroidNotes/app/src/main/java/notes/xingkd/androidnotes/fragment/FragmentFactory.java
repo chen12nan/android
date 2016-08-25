@@ -3,6 +3,7 @@ package notes.xingkd.androidnotes.fragment;
 import android.app.Fragment;
 
 import notes.xingkd.androidnotes.contact.ContactFragment;
+import notes.xingkd.androidnotes.http.JsonFragment;
 
 /**
  * Created by xkd on 16-6-22.
@@ -18,6 +19,7 @@ public class FragmentFactory  {
         ftLoginDialog,
         ftPreference,
         ftAsyncTask,
+        ftJson,
     }
 
     public static Fragment createFragment(FragmentType type)
@@ -53,6 +55,10 @@ public class FragmentFactory  {
         else if(type == FragmentType.ftAsyncTask)
         {
             return new AsyncTaskFragment();
+        }
+        else if(type == FragmentType.ftJson)
+        {
+            return new JsonFragment();
         }
         else
         {

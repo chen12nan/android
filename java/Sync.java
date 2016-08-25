@@ -3,14 +3,9 @@ import java.io.ObjectOutputStream;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
-
 //import javax.swing.JButton;
 
 public class Sync{
-
-	private class Mute
-	{
-	}
 
 	private static  class ThreadA extends Thread
 	{
@@ -77,6 +72,9 @@ public class Sync{
 	public static void main(String[] args)
 	{
 		testTransient();
+		Poly poly = new Poly();
+		poly.testPoly();
+		System.out.println("======================");
 	}
 	
 	public static void testTransient()
@@ -125,6 +123,7 @@ public class Sync{
 			System.out.println(Object.class.getName());
 		}
 		System.out.println("Hello World\n");		
+
 		/*JButton jb = new JButton();
 		jb.show();*/
 	}

@@ -3,6 +3,8 @@ package notes.xingkd.androidnotes;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -46,6 +48,26 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
         String str = "MenuFirst";
         Log.v("judegment" , "  " + str.equals(getResources().getString(R.string.menu_first))
                 + "  " + str + "  " + getResources().getString(R.string.menu_first));
+
+        PackageManager oPM = getPackageManager();
+        try
+        {
+            ApplicationInfo applicationInfo = oPM.getApplicationInfo("xingkd.abcd", 0);
+            if(applicationInfo != null)
+            {
+                Log.v("xingkd_info", applicationInfo.toString());
+            }
+            else
+            {
+                Log.v("xingkd_info", " ====================");
+            }
+        }
+        catch (PackageManager.NameNotFoundException e)
+        {
+            e.printStackTrace();
+            Log.v("xingkd_info", "exception===============");
+        }
+
     }
 
     @Override
@@ -121,7 +143,7 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
 
     public void testFragment()
     {
-        content = FragmentFactory.createFragment(FragmentFactory.FragmentType.ftDefault);
+        content = FragmentFactory.createFragment(FragmentFactory.FragmentType.ftJson);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.add(R.id.main_content, content, "CONTACT");
 //        ft.addToBackStack("CONTACT");

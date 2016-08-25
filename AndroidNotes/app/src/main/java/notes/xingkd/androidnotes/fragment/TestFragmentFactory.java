@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.support.v4.util.ArrayMap;
 
 import notes.xingkd.androidnotes.component.HandlerActivity;
-import notes.xingkd.androidnotes.component.TitleBarActivity;
 import notes.xingkd.androidnotes.preference.TestPreferenceActivity;
 
 /**
@@ -84,9 +83,11 @@ public class TestFragmentFactory {
     private class TitleBarActivityAction extends ItemAction {
         @Override
         public void onAction() {
-            Intent titleBarIntent = new Intent(m_context, TitleBarActivity.class);
-            m_context.startActivity(titleBarIntent);
+//            Intent titleBarIntent = new Intent(m_context, TitleBarActivity.class);
+//            m_context.startActivity(titleBarIntent);
 
+            Intent intent = new Intent("xingkd.aidlclient.ABC");
+            m_context.startActivity(intent);
         }
     }
 }
