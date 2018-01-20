@@ -19,7 +19,7 @@ public class TestDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // 设置Dialog的标题
-        getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
         return inflater.inflate(R.layout.test_dialog_fragment, container, false);
     }
 }

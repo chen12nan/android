@@ -20,7 +20,7 @@ import notes.xingkd.androidnotes.R;
 public class TestFragment extends Fragment implements View.OnClickListener{
 
     private String[] items = {"TestDialog", "LoginDialog",
-            "HandlerActivity", "TitleBarActivity", "TestPreferenceActivity"};
+            "HandlerActivity", "TitleBarActivity", "TestPreferenceActivity", "AsyncTaskFragment"};
 
     @Nullable
     @Override

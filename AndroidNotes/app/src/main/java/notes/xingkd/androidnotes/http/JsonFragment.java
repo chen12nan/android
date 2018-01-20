@@ -58,7 +58,7 @@ public class JsonFragment extends Fragment {
     public void testURLConnection()
     {
         try{
-            URL url = new URL("http://172.16.23.80/test/json.php");
+            URL url = new URL("http://homestead.app/test/json");
             try{
                 URLConnection urlConnection = url.openConnection();
                 HttpURLConnection httpURLConnection = (HttpURLConnection)urlConnection;
@@ -72,6 +72,7 @@ public class JsonFragment extends Fragment {
                 Log.v("abc ", "===================================3=====");
                 int statusCode = httpURLConnection.getResponseCode();
                 Log.v("abc ", "===================================4=====");
+
                 if(statusCode == 200)
                 {
                     BufferedInputStream inputStream = new BufferedInputStream(httpURLConnection.getInputStream());
@@ -101,6 +102,7 @@ public class JsonFragment extends Fragment {
         catch (MalformedURLException e)
         {
             e.printStackTrace();
+
         }
 
     }

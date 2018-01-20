@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
+import notes.xingkd.androidnotes.R;
 import notes.xingkd.androidnotes.contact.ContactFragment;
 
 /**
@@ -33,6 +34,7 @@ public class HandlerActivity extends Activity implements Runnable{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.test_icon_size);
         mThread = new Thread(this);
         System.out.println("HandlerActivity::onCreate : idName = " + Thread.currentThread().getName());
         // handleMessage run in MainLooper(MainThread)

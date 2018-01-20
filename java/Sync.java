@@ -72,8 +72,6 @@ public class Sync{
 	public static void main(String[] args)
 	{
 		testTransient();
-		Poly poly = new Poly();
-		poly.testPoly();
 		System.out.println("======================");
 	}
 	

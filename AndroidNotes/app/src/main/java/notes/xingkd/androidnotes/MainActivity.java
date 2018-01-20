@@ -143,7 +143,7 @@ public class MainActivity extends Activity implements LoginDialogFragment.LoginI
 
     public void testFragment()
     {
-        content = FragmentFactory.createFragment(FragmentFactory.FragmentType.ftJson);
+        content = FragmentFactory.createFragment(FragmentFactory.FragmentType.ftDefault);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.add(R.id.main_content, content, "CONTACT");
 //        ft.addToBackStack("CONTACT");
